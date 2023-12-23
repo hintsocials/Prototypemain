@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import homegradient from "../assets/Images/homegradient.png";
+
 import BottomNav from "../components/BottomNav";
 import ChatButton from "../assets/icons/Hint.svg";
 import CardList from "../assets/icons/CardList.svg";
