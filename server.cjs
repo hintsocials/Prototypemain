@@ -80,34 +80,34 @@ app.post('/api/generate-otp', async (req, res) => {
     };
     await newUserRef.set(user);
 
-    // Send OTP via SMS OTP
-    const smsResponse = await unirest.get("https://www.fast2sms.com/dev/bulkV2")
-      .query({
-        "authorization": apiKey,
-        "variables_values": otp.toString(), // Convert OTP to string
-        "route": "otp",
-        "numbers": phone
-      })
-      .header("cache-control", "no-cache");
-      console.log('Fast2SMS API response:', smsResponse.body);
+    // // Send OTP via SMS OTP
+    // const smsResponse = await unirest.get("https://www.fast2sms.com/dev/bulkV2")
+    //   .query({
+    //     "authorization": apiKey,
+    //     "variables_values": otp.toString(), // Convert OTP to string
+    //     "route": "otp",
+    //     "numbers": phone
+    //   })
+    //   .header("cache-control", "no-cache");
+    //   console.log('Fast2SMS API response:', smsResponse.body);
 
-    if (smsResponse.error) {
-      // Failed to send OTP
-      console.error(`Failed to send OTP to ${phone}: ${smsResponse.error}`);
-      res.status(500).json({ success: false, error: 'Failed to send OTP' });
-      return;
-    }
+    // if (smsResponse.error) {
+    //   // Failed to send OTP
+    //   console.error(`Failed to send OTP to ${phone}: ${smsResponse.error}`);
+    //   res.status(500).json({ success: false, error: 'Failed to send OTP' });
+    //   return;
+    // }
 
-    // Check the response body for success
-    if (smsResponse.body.return === true) {
-      // OTP sent successfully
-      console.log(`OTP sent successfully to ${phone}`);
-    } else {
-      // Failed to send OTP
-      console.error(`Failed to send OTP to ${phone}: ${smsResponse.body.message}`);
-      res.status(500).json({ success: false, error: `Failed to send OTP: ${smsResponse.body.message}` });
-      return;
-    }
+    // // Check the response body for success
+    // if (smsResponse.body.return === true) {
+    //   // OTP sent successfully
+    //   console.log(`OTP sent successfully to ${phone}`);
+    // } else {
+    //   // Failed to send OTP
+    //   console.error(`Failed to send OTP to ${phone}: ${smsResponse.body.message}`);
+    //   res.status(500).json({ success: false, error: `Failed to send OTP: ${smsResponse.body.message}` });
+    //   return;
+    // }
 
     req.session.userId = user.userId;
     // console.log(`Generated OTP for ${phone}: ${otp}`);
