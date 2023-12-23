@@ -129,7 +129,7 @@ app.post('/api/validate-otp', async (req, res) => {
   try {
     //const { userId, enteredOtp } = req.body;
     const { enteredOtp } = req.body;
-    const userId = req.session.userId;
+    const userId = localStorage.getItem('userId');
 
     console.log('Session ID during OTP validation:', req.sessionID);
     console.log('User ID during OTP validation:', userId);
