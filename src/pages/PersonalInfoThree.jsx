@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useUser } from "../context/UserContext";
 import { Link } from "react-router-dom";
-import apiUrl from '../apiConfig';
 
 import cameragradient from "../assets/images/cameragradient.png";
 import AddButton from "../assets/icons/AddButton.svg";

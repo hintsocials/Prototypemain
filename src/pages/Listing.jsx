@@ -3,7 +3,7 @@ import listinGradientTop from "../assets/images/buffet-gradientTop.png";
 import listingGradientBottom from "../assets/images/buffet-gradientBottom.png";
 import ChatButton from "../assets/icons/Hint.svg";
 import BottomNav from "../components/BottomNav";
-import apiUrl from '../apiConfig';
+
 
 import { Link } from "react-router-dom";
 

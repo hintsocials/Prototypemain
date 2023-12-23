@@ -4,7 +4,7 @@ import profilebasicgradient from "../assets/images/profile-basic-gradient.png";
 import settings from "../assets/icons/settings.svg";
 import AddButton2 from "../assets/icons/AddButton2.svg";
 import rightarrow from "../assets/icons/rightarrow.svg";
-import apiUrl from '../apiConfig';
+
 
 import { Link,useNavigate } from "react-router-dom";
 import GenderSelection from "../components/GenderButton";

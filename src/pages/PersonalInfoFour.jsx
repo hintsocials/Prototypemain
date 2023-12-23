@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import axios from "axios";
 import SwipeButton from "../components/SwipeButton";
-import apiUrl from '../apiConfig';
+
 
 import { Link, useNavigate } from "react-router-dom";
 

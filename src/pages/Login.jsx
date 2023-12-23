@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import apiUrl from '../apiConfig';
+
 
 import logingradient1 from "../assets/images/logingradient_1.png";
 import logingradient2 from "../assets/images/logingradient_2.png";

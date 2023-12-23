@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import logingradient1 from "../assets/images/logingradient_1.png";
 import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
-import apiUrl from '../apiConfig';
+
 const Otp = () => {
   const navigate = useNavigate();
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];

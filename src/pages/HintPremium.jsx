@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import apiUrl from '../apiConfig';
+
 
 const HintPremium = () => {
   const { userData } = useUser();

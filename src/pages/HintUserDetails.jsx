@@ -3,7 +3,7 @@ import Image from "../assets/images/Image.png";
 import HotelImage from "../assets/images/hotelImg.png";
 import BottomNav from "../components/BottomNav";
 import ChatButton from "../assets/icons/Hint.svg";
-import apiUrl from '../apiConfig';
+
 
 import Verify from "../assets/icons/Verify.svg";
 import Like from "../assets/icons/Like.svg";

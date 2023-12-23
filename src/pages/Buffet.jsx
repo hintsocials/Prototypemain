@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import buffetgradientTop from "../assets/images/buffet-gradientTop.png";
 import buffetgradientBottom from "../assets/images/buffet-gradientBottom.png";
-import apiUrl from '../apiConfig';
+
 
 import BottomNav from "../components/BottomNav";
 import BuffetMember from "../components/BuffetMember";

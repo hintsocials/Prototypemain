@@ -14,7 +14,7 @@ import TopNotch from "../assets/images/TopNotch.png";
 import BottomNav from "../components/BottomNav";
 import animation from "../assets/icons/circle-arrow-down-solid.svg";
 import { useNavigate } from "react-router-dom";
-import apiUrl from '../apiConfig';
+
 
 const Maps = () => {
   const [selectedButton, setSelectedButton] = useState("ongoing");

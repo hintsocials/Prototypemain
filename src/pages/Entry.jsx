@@ -2,7 +2,7 @@ import React from "react";
 import homeimage from "../assets/images/homeimage.png";
 import homestyle from "../assets/images/homestyle.png";
 import { useNavigate } from "react-router-dom";
-import apiUrl from '../apiConfig';
+
 
 
 const Entry = () => {
