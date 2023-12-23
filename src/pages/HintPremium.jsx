@@ -21,7 +21,7 @@ const HintPremium = () => {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await fetch('${apiUrl}/api/users');
+      const response = await fetch('https://prototypeserver.onrender.com/api/users');
       const data = await response.json();
       console.log(data);
 

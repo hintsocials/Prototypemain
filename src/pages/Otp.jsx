@@ -35,7 +35,7 @@ const Otp = () => {
       // Otp validation to be done here.
       try {
         console.log('Entered OTP:', otpValue); // Add this line
-        const response = await axios.post("${apiUrl}/api/validate-otp", 
+        const response = await axios.post("https://prototypeserver.onrender.com/api/validate-otp", 
           //userId: '-Nm9f38jfNe1yVaU6t15', // Replace with the actual user ID from your application state or context
           { enteredOtp: otpValue },
           { withCredentials: true }

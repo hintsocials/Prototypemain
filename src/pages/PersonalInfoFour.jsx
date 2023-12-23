@@ -28,7 +28,7 @@ const PersonalInfoFour = () => {
     try {
       // Make a POST request to save user information to the backend
       const response = await axios.post(
-        '${apiUrl}/api/save-user-infonew',
+        "https://prototypeserver.onrender.com/api/save-user-infonew",
         newUserData,
         { withCredentials: true } // Include this if you need to send credentials
       );

@@ -74,7 +74,7 @@ const PersonalInfoOne = () => {
     updateUser(userData);
     try {
       const response = await axios.post(
-        "${apiUrl}/api/save-user-info",
+        "https://prototypeserver.onrender.com/api/save-user-info",
         userData,
         { withCredentials: true }
       );

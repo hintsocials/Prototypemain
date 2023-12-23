@@ -17,7 +17,7 @@ const Login = () => {
   const handleOtp = async () => {
     try {
       // Example Axios request with credentials
-      const response = await axios.post("${apiUrl}/api/generate-otp", { phone }, { withCredentials: true });
+      const response = await axios.post("https://prototypeserver.onrender.com/api/generate-otp", { phone }, { withCredentials: true });
 
       console.log(response.data);
       navigate("/otp");

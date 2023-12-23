@@ -55,7 +55,7 @@ const Profile = () => {
     // Fetch user details when the component mounts
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get("${apiUrl}/api/fetch-user-details", { withCredentials: true });
+        const response = await axios.get("https://prototypeserver.onrender.com/api/fetch-user-details", { withCredentials: true });
         const { success, user } = response.data;
 
         if (success) {
