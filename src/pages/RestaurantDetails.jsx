@@ -7,6 +7,7 @@ import locationIcon from "../assets/icons/location.svg";
 import shareIcon from "../assets/icons/shareIcon.svg";
 import ticketIcon from "../assets/icons/ticket.svg";
 import hotelImg from "../assets/images/hotelImg.png";
+import apiUrl from '../apiConfig';
 
 const RestaurantDetails = () => {
   const count = 159;

@@ -1,6 +1,7 @@
 import React from "react";
 import premiumgradient from "../assets/images/premium-gradient.png";
 import check from "../assets/icons/check.svg";
+import apiUrl from '../apiConfig';
 
 const Premium = () => {
   return (

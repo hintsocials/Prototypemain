@@ -3,6 +3,8 @@ import profilegradient from "../assets/images/profile-gradient.png";
 import ChatButton from "../assets/icons/Hint.svg";
 import BottomNav from "../components/BottomNav";
 import profilebg from "../assets/images/profile-bg.png";
+import apiUrl from '../apiConfig';
+
 
 
 import { Link } from "react-router-dom";

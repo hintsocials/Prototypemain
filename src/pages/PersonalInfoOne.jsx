@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 import dobToAge from "dob-to-age";
 import axios from "axios";
+import apiUrl from '../apiConfig';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -73,7 +74,7 @@ const PersonalInfoOne = () => {
     updateUser(userData);
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/save-user-info",
+        "${apiUrl}/api/save-user-info",
         userData,
         { withCredentials: true }
       );

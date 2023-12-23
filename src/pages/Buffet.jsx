@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import buffetgradientTop from "../assets/images/buffet-gradientTop.png";
 import buffetgradientBottom from "../assets/images/buffet-gradientBottom.png";
+import apiUrl from '../apiConfig';
 
 import BottomNav from "../components/BottomNav";
 import BuffetMember from "../components/BuffetMember";
@@ -13,7 +14,7 @@ const Buffet = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/users");
+        const response = await fetch("${apiUrl}/api/users");
         const data = await response.json();
         if (data.success) {
           setUsers(data.users);

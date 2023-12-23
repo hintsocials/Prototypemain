@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import apiUrl from '../apiConfig';
 
 import logingradient1 from "../assets/images/logingradient_1.png";
 import logingradient2 from "../assets/images/logingradient_2.png";
@@ -16,7 +17,7 @@ const Login = () => {
   const handleOtp = async () => {
     try {
       // Example Axios request with credentials
-      const response = await axios.post("http://localhost:3001/api/generate-otp", { phone }, { withCredentials: true });
+      const response = await axios.post("${apiUrl}/api/generate-otp", { phone }, { withCredentials: true });
 
       console.log(response.data);
       navigate("/otp");

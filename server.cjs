@@ -17,7 +17,8 @@ admin.initializeApp({
 });
 
 const app = express();
-const port = 3001; // Set the port you want to use
+// const port = 3001; // Set the port you want to use
+const port = process.env.PORT || 3001;
 const storage = admin.storage().bucket(); 
 // Plivo configuration
 // const plivoClient = new plivo.Client('YOUR_PLIVO_API_KEY', 'YOUR_PLIVO_API_SECRET');

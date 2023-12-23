@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import hotelgradient from "../assets/images/hotelgradient.png";
 import hotelImg from "../assets/images/hotelImg.png";
 import hotelLogo from "../assets/images/hotelLogo.png";
+import apiUrl from '../apiConfig';
 
 import { useNavigate } from "react-router-dom";
 
