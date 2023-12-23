@@ -24,7 +24,6 @@ import HintUserDetails from "./pages/HintUserDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 import RestaurantDetails from "./pages/RestaurantDetails";
-import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
 
