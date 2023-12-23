@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+.custom-bottom-navigation-height {
+    height: 55px; /* Default height for widths outside the specified range */
+  
+    @media (min-width: 320px) and (max-width: 380px) {
+      height: 50px; /* Height for widths between 295px and 430px */
+    }
+
+    @media (min-width: 200px) and (max-width: 320px) {
+        height: 45px; /* Height for widths between 295px and 430px */
+      }
+  }
+
+  .custom-bottom-navigation-height-icon {
+    height: 20px; /* Default height for widths outside the specified range */
+  
+    @media (min-width: 320px) and (max-width: 380px) {
+      height: 17px; /* Height for widths between 295px and 430px */
+    }
+
+    @media (min-width: 200px) and (max-width: 320px) {
+        height: 15px; /* Height for widths between 295px and 430px */
+      }
+  }
+
+  .custom-send-a-hint-height {
+    padding: 12px; /* Default height for widths outside the specified range */
+  
+    @media (min-width: 320px) and (max-width: 380px) {
+      padding: 10px; /* Height for widths between 295px and 430px */
+    }
+
+    @media (min-width: 200px) and (max-width: 320px) {
+        padding: 8px; /* Height for widths between 295px and 430px */
+      }
+  }

@@ -1,0 +1,199 @@
+#root {
+  max-width: 450px;
+  margin: 0 ;
+  min-height: 100vh;
+  max-height: fit-content;
+}
+
+
+@media (max-height: 480px) and (min-width: 480px) and (max-width: 600px) { 
+  html{
+      -webkit-transform: rotate(-90deg);
+         -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+           -o-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      -webkit-transform-origin: left top;
+         -moz-transform-origin: left top;
+          -ms-transform-origin: left top;
+           -o-transform-origin: left top;
+              transform-origin: left top;
+      width: 320px; /*this is the iPhone screen width.*/
+      position: absolute;
+      top: 100%;
+          left: 0
+  }
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale-Y(1);
+  }
+  50% {
+      transform: scale-Y(1.05);
+  }
+  100% {
+      transform: scale-Y(1);
+  }
+}
+
+.animated-text {
+  font-size: 24px;
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+
+
+/* Animation for -Tap the screen to Proceed */
+.taps{
+  animation: tap 2s infinite cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes tap {
+  0%{
+    transform: translate3D(0px, 0px, 0px);
+  }
+  50%{
+    transform: translate3D(0px, 3px, 0px);
+    
+  }
+  100%{
+    transform: translate3D(0px, 0px, 0px);
+  }
+}
+
+
+.lufga {
+  font-family: lufga;
+}
+
+@font-face {
+  font-family: 'lufga';
+  src: url('./fonts/LufgaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.gradient-ring {
+  border-image: linear-gradient(45deg, #3F2170, #CCB9EB) 1;
+  border-width: 3px; 
+  border-style: solid;
+}
+
+
+/* Gradient for the border elements in INTEREST, input fields and buttons */
+
+.border-gradient-rounded {
+  border: 2px solid transparent; 
+  background: 
+    linear-gradient(to right, black, black), 
+    linear-gradient(to right, #4F327E , #9C85C1);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+/* Gradient for the border for profile image in Profile-Basic */
+.profile-border-gradient {
+  border: 2px solid transparent; 
+  background: 
+    linear-gradient(to right, #1E1D1D,#1E1D1D), 
+    linear-gradient(45deg, #845CFCBA, #845CFC1F);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+.bg-custom-gradient {
+  background: linear-gradient(290deg, rgba(106, 87, 163, 0.73), rgba(23, 0, 90, 0.17));
+}
+.bg-custom-gradient2 {
+  background: linear-gradient(20deg, rgba(106, 87, 163, 0.73), rgba(23, 0, 90, 0.17));
+}
+
+/* gradient in profile */
+
+.profile-custom-gradient {
+  background: linear-gradient(240deg, rgba(36, 2, 138, 0),rgb(132, 92, 252,0.91) );
+}
+
+/* Style for sliding toggle button for selecting all genders as preference. */
+.slider-toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider-toggle:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #9D7BFF;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider-toggle {
+  background-color: #000000;
+}
+
+input:checked + .slider-toggle:before {
+  transform: translateX(20px);
+}
+
+/* Custom gradient inside premium card in Premium */
+
+.premium-custom-gradient {
+  background: linear-gradient( 120deg, rgb(97, 65, 192), rgb(11, 8, 23));
+}
+
+.premium-border-gradient-rounded {
+  border: 1px solid transparent; 
+  background: 
+    linear-gradient(to right, black, black), 
+    linear-gradient(160deg, #6A47CE ,#291D4E );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+/* gradient for input text for the message component */
+.message-border-gradient {
+  border: 1px solid transparent; 
+  background: 
+    linear-gradient(to right, #292929, #292929), 
+    linear-gradient(to right, #6C4FC3 , #424046);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+
+/* transition for button at map page - (onGoing and upComing) */
+
+.button-transition-maps {
+  transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
+}
+
+
+/* gradient for Event card in Map page. */
+.maps-card-border-gradient {
+  border: 2px solid transparent; 
+  background: 
+    linear-gradient(to bottom, #181818  , #090909), 
+    linear-gradient(to left, #6C4FC3 , #424046);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
