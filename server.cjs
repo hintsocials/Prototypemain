@@ -3,6 +3,8 @@ const axios = require('axios');
 const admin = require('firebase-admin');
 const cors = require('cors'); // Import the cors middleware
 const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+const redis = require('redis');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const unirest = require("unirest");
@@ -20,6 +22,13 @@ const app = express();
 // const port = 3001; // Set the port you want to use
 const port = process.env.PORT || 3001;
 const storage = admin.storage().bucket(); 
+
+// Create a Redis client (make sure Redis is running)
+const redisClient = redis.createClient({
+  host: 'localhost', // Redis server address
+  port: 6379, // Redis server port
+  // add other options if needed
+});
 // Plivo configuration
 // const plivoClient = new plivo.Client('YOUR_PLIVO_API_KEY', 'YOUR_PLIVO_API_SECRET');
 // const plivoPhoneNumber = 'YOUR_PLIVO_PHONE_NUMBER';
@@ -36,6 +45,7 @@ app.use(cookieParser());
 
   // Use express-session middleware
 app.use(session({
+  store: new RedisStore({ client: redisClient }),
   secret: "1111", // Replace with a secret key for session encryption
   resave: false,
   saveUninitialized: true,
@@ -109,9 +119,9 @@ app.post('/api/generate-otp', async (req, res) => {
     //   return;
     // }
 
-    // req.session.userId = user.userId;
+    req.session.userId = user.userId;
     localStorage.setItem('userId', user.userId);
-    res.json({ success: true, userId: user.userId });
+    // res.json({ success: true, userId: user.userId });
     // console.log(`Generated OTP for ${phone}: ${otp}`);
     console.log(`Generated OTP for ${phone}: ${otp}`);
     console.log('Session ID after OTP generation:', req.sessionID);
