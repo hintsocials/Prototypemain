@@ -48,13 +48,14 @@ app.use(session({
   cookie: {
     secure: true, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
+    sameSite: 'None',
   },
 }));
 app.use(express.json());
 
 // Middleware to log session information
 app.use((req, res, next) => {
-  console.log('Session ID:', req.sessionID);
+  console.log('Session ID:', req.session.id);
   console.log('User ID:', req.session.userId);
   next();
 });
