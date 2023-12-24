@@ -38,6 +38,8 @@ app.use(cors({
   // Use express-session middleware
   // Use express-session middleware with Firebase Realtime Database session storage
 const connectFirebase = require('connect-session-firebase');
+// Import the Store class from connect-session-firebase
+const { Store } = require('connect-session-firebase');
 const FirebaseStore = connectFirebase(cookieSession);
 app.use(cookieSession({
   name: 'session',
