@@ -53,11 +53,11 @@ app.use(session({
 app.use(express.json());
 
 // Middleware to log session information
-// app.use((req, res, next) => {
-//   console.log('Session ID:', req.sessionID);
-//   console.log('User ID:', req.session.userId);
-//   next();
-// });
+app.use((req, res, next) => {
+  console.log('Session ID:', req.sessionID);
+  console.log('User ID:', req.session.userId);
+  next();
+});
 
 // Endpoint for generating OTP and storing user data
 app.post('/api/generate-otp', async (req, res) => {
