@@ -177,7 +177,7 @@ app.post('/api/save-user-info', async (req, res) => {
     const existingUserData = userSnapshot.val();
     
 
-    console.log('Session ID during user-info:', req.sessionID);
+    console.log('Session ID during user-info:', req.session.id);
     // Assuming 'usersinfo' is the database node to store user information
     if (existingUserData) {
       // User exists, update the information
