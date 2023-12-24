@@ -119,7 +119,7 @@ app.post('/api/generate-otp', async (req, res) => {
     // res.json({ success: true, userId: user.userId });
     // console.log(`Generated OTP for ${phone}: ${otp}`);
     console.log(`Generated OTP for ${phone}: ${otp}`);
-    console.log('Session ID after OTP generation:', req.sessionID);
+    console.log('Session ID after OTP generation:', req.session.id);
     console.log('User ID after OTP generation:', req.session.userId);
 
     res.json({ success: true, userId: user.userId });
@@ -135,7 +135,7 @@ app.post('/api/validate-otp', async (req, res) => {
     //const { userId, enteredOtp } = req.body;
     const { enteredOtp } = req.body;
     const userId = req.session.userId;
-    console.log('Session ID during OTP validation:', req.sessionID);
+    console.log('Session ID during OTP validation:', req.session.id);
     console.log('User ID during OTP validation:', userId);
     console.log('Entered OTP:', enteredOtp);
 
@@ -293,7 +293,7 @@ app.get('/api/fetch-user-details', async (req, res) => {
     const userSnapshot = await userRef.once('value');
     const user = userSnapshot.val();
 
-    console.log('Session ID during profiling:', req.sessionID);
+    console.log('Session ID during profiling:', req.session.id);
     console.log('User ID during OTP profiling:', userId);
 
     if (!user) {
