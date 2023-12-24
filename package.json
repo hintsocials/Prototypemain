@@ -23,6 +23,7 @@
     "body-parser": "^1.20.2",
     "buffer": "^6.0.3",
     "connect-redis": "^7.1.0",
+    "connect-session-firebase": "^11.0.0",
     "cookie-parser": "^1.4.6",
     "cookie-universal": "^2.2.2",
     "cors": "^2.8.5",
