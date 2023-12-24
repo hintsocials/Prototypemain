@@ -48,6 +48,7 @@ app.use(session({
   cookie: {
     secure: true, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
+    sameSite: 'none',
   },
 }));
 app.use(express.json());
