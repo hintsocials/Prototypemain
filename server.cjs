@@ -39,7 +39,7 @@ app.use(cookieParser());
 const FirebaseStore = require('connect-session-firebase')(session);
 app.use(session({
   secret: "1111", // Replace with a secret key for session encryption
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   store: new FirebaseStore({
     database: admin.database(),
@@ -116,6 +116,7 @@ app.post('/api/generate-otp', async (req, res) => {
     // }
 
     req.session.userId = user.userId;
+    req.session.save();
     // res.json({ success: true, userId: user.userId });
     // console.log(`Generated OTP for ${phone}: ${otp}`);
     console.log(`Generated OTP for ${phone}: ${otp}`);
