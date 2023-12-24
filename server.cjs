@@ -32,7 +32,7 @@ app.use(cors({
     credentials: true,
   }));
 
-app.use(cookieParser());
+
 
   // Use express-session middleware
   // Use express-session middleware with Firebase Realtime Database session storage
@@ -48,10 +48,11 @@ app.use(session({
   cookie: {
     secure: true, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
-    sameSite: 'None',
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Adjust based on environment
   },
 }));
 app.use(express.json());
+app.use(cookieParser());
 
 // Middleware to log session information
 app.use((req, res, next) => {
