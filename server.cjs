@@ -46,7 +46,7 @@ app.use(session({
     sessions: 'sessions', // Specify the node where sessions will be stored
   }),
   cookie: {
-    secure: false, // Set to true in a production environment with HTTPS
+    secure: true, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
   },
 }));
