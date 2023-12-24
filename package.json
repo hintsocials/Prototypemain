@@ -25,6 +25,7 @@
     "connect-redis": "^7.1.0",
     "connect-session-firebase": "^11.0.0",
     "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
     "cookie-universal": "^2.2.2",
     "cors": "^2.8.5",
     "dob-to-age": "^1.0.1",

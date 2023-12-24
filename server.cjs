@@ -2,8 +2,9 @@ const express = require('express');
 const axios = require('axios');
 const admin = require('firebase-admin');
 const cors = require('cors'); // Import the cors middleware
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
+// const session = require('express-session');
+// const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const unirest = require("unirest");
 
@@ -32,24 +33,22 @@ app.use(cors({
     credentials: true,
   }));
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
   // Use express-session middleware
   // Use express-session middleware with Firebase Realtime Database session storage
-const FirebaseStore = require('connect-session-firebase')(session);
-app.use(session({
-  secret: "1111", // Replace with a secret key for session encryption
-  resave: false,
-  saveUninitialized: true,
+const connectFirebase = require('connect-session-firebase');
+const FirebaseStore = connectFirebase(cookieSession);
+app.use(cookieSession({
+  name: 'session',
+  secret: '1111',
+  maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
+  secure: true, // Set to true in a production environment with HTTPS
+  httpOnly: true,
   store: new FirebaseStore({
     database: admin.database(),
     sessions: 'sessions', // Specify the node where sessions will be stored
   }),
-  cookie: {
-    secure: true, // Set to true in a production environment with HTTPS
-    maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
-    sameSite: 'none',
-  },
 }));
 app.use(express.json());
 
