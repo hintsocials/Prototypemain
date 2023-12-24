@@ -3,8 +3,6 @@ const axios = require('axios');
 const admin = require('firebase-admin');
 const cors = require('cors'); // Import the cors middleware
 const session = require('express-session');
-const RedisStore = require('connect-redis')(session);
-const redis = require('redis');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const unirest = require("unirest");
@@ -22,13 +20,6 @@ const app = express();
 // const port = 3001; // Set the port you want to use
 const port = process.env.PORT || 3001;
 const storage = admin.storage().bucket(); 
-
-// Create a Redis client (make sure Redis is running)
-const redisClient = redis.createClient({
-  host: 'localhost', // Redis server address
-  port: 6379, // Redis server port
-  // add other options if needed
-});
 // Plivo configuration
 // const plivoClient = new plivo.Client('YOUR_PLIVO_API_KEY', 'YOUR_PLIVO_API_SECRET');
 // const plivoPhoneNumber = 'YOUR_PLIVO_PHONE_NUMBER';
@@ -44,11 +35,16 @@ app.use(cors({
 app.use(cookieParser());
 
   // Use express-session middleware
+  // Use express-session middleware with Firebase Realtime Database session storage
+const FirebaseStore = require('connect-session-firebase')(session);
 app.use(session({
-  store: new RedisStore({ client: redisClient }),
   secret: "1111", // Replace with a secret key for session encryption
   resave: false,
   saveUninitialized: true,
+  store: new FirebaseStore({
+    database: admin.database(),
+    sessions: 'sessions', // Specify the node where sessions will be stored
+  }),
   cookie: {
     secure: false, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
@@ -120,7 +116,6 @@ app.post('/api/generate-otp', async (req, res) => {
     // }
 
     req.session.userId = user.userId;
-    localStorage.setItem('userId', user.userId);
     // res.json({ success: true, userId: user.userId });
     // console.log(`Generated OTP for ${phone}: ${otp}`);
     console.log(`Generated OTP for ${phone}: ${otp}`);
@@ -139,8 +134,7 @@ app.post('/api/validate-otp', async (req, res) => {
   try {
     //const { userId, enteredOtp } = req.body;
     const { enteredOtp } = req.body;
-    const userId = localStorage.getItem('userId');
-
+    const userId = req.session.userId;
     console.log('Session ID during OTP validation:', req.sessionID);
     console.log('User ID during OTP validation:', userId);
     console.log('Entered OTP:', enteredOtp);
