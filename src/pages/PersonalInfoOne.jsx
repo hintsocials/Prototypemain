@@ -78,11 +78,11 @@ const PersonalInfoOne = () => {
 
     updateUser(userData);
     try {
-      const response = await axios.post(
-        "https://weak-teal-donkey-ring.cyclic.app/api/save-user-info",
-        userData,userId,
-        { withCredentials: true }
-      );
+      // const response = await axios.post(
+      //   "https://weak-teal-donkey-ring.cyclic.app/api/save-user-info",
+      //   userData,userId,
+      //   { withCredentials: true }
+      // );
   
       console.log(userData);
   
