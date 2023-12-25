@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
+// import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import hotelImg from "../assets/images/hotelImg.png";
 import Bombai from "../assets/images/Bombai.png";
@@ -37,7 +37,7 @@ const Maps = () => {
 
   // handle the restaurant features.
   const handleClickRestaurant = () => {
-    window.location.href = "https://www.hint.com";
+    window.location.href = "https://www.hintsocials.com";
   };
 
   const isOngoingSelected = selectedButton === "upcoming";
