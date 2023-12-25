@@ -40,7 +40,8 @@ const PersonalInfoFour = () => {
       console.log(newUserData); // Log the response from the backend
 
 
-      navigate("/hint-premium");
+      navigate(`/hint-premium?userId=${userId}`);
+      // navigate(`/info-2?userId=${userId}`);
     } catch (error) {
       console.error(error);
       // Handle the error, e.g., show an error message to the user
