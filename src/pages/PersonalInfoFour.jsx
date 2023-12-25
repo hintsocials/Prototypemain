@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useUser } from "../context/UserContext";
 import axios from "axios";
 import SwipeButton from "../components/SwipeButton";
+import { useLocation } from 'react-router-dom';
 
 
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +10,9 @@ import { Link, useNavigate } from "react-router-dom";
 const PersonalInfoFour = () => {
   const [qualification, setQualification] = useState("");
   const [bio, setBio] = useState("");
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get('userId');
 
   const navigate = useNavigate();
   // const { updateUser } = useUser();
@@ -28,12 +32,13 @@ const PersonalInfoFour = () => {
     try {
       // Make a POST request to save user information to the backend
       const response = await axios.post(
-        "https://prototypeserver.onrender.com/api/save-user-infonew",
-        newUserData,
+        "https://weak-teal-donkey-ring.cyclic.app/api/save-user-infonew",
+        newUserData,userId,
         { withCredentials: true } // Include this if you need to send credentials
       );
 
       console.log(newUserData); // Log the response from the backend
+
 
       navigate("/hint-premium");
     } catch (error) {

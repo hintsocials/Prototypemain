@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useUser } from "../context/UserContext";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 import cameragradient from "../assets/images/cameragradient.png";
 import AddButton from "../assets/icons/AddButton.svg";
@@ -24,7 +25,9 @@ const PersonalInfoThree = () => {
   const fileInputRefTwo = useRef(null);
   const [profileImageOne, setProfileImageOne] = useState(null);
   const [profileImageTwo, setProfileImageTwo] = useState(null);
-
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get('userId');
 
   const handleSave = async () => {
     // User input Validatin to be done.
@@ -143,7 +146,8 @@ const PersonalInfoThree = () => {
           </form>
         </div>
         <div>
-          <Link to={isButtonDisabled ? "#" : "/info-4"}>
+        <Link to={isButtonDisabled ? "#" : `/info-4?userId=${userId}`}>
+
             <SwipeButton
               Steps="Step 3 out of 3"
               handleSave={handleSave}

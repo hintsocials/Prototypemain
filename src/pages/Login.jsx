@@ -17,10 +17,10 @@ const Login = () => {
   const handleOtp = async () => {
     try {
       // Example Axios request with credentials
-      const response = await axios.post("https://prototypeserver.onrender.com/api/generate-otp", { phone }, { withCredentials: true });
-
+      const response = await axios.post("https://weak-teal-donkey-ring.cyclic.app/api/generate-otp", { phone }, { withCredentials: true });
+      const { userId } = response.data;
       console.log(response.data);
-      navigate("/otp");
+      navigate(`/otp?userId=${userId}`);
     } catch (error) {
       console.log(error);
     }

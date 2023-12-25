@@ -1,12 +1,19 @@
 import React, { useRef, useState } from "react";
 import logingradient1 from "../assets/images/logingradient_1.png";
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate,useParams} from "react-router-dom";
 import axios from "axios";
+import { useLocation } from 'react-router-dom';
+
 
 const Otp = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get('userId');
+
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const [otpValue, setOtpValue] = useState("");
+
 
 
 // To handle the input.
@@ -35,16 +42,17 @@ const Otp = () => {
       // Otp validation to be done here.
       try {
         console.log('Entered OTP:', otpValue); // Add this line
-        const response = await axios.post("https://prototypeserver.onrender.com/api/validate-otp", 
+        console.log('User ID from query parameter:', userId);
+        const response = await axios.post("https://weak-teal-donkey-ring.cyclic.app/api/validate-otp", 
           //userId: '-Nm9f38jfNe1yVaU6t15', // Replace with the actual user ID from your application state or context
-          { enteredOtp: otpValue },
+          { enteredOtp: otpValue, userId },
           { withCredentials: true }
         );
         
         console.log('Response from server:', response.data);
         // navigate('/info-1')
         if (response.data.success) {
-          navigate('/info-1');
+          navigate(`/info-1?userId=${userId}`);
         } else {
           // Handle invalid OTP.
           alert("Failed to generate OTP. Please try again.");

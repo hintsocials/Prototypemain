@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -18,6 +19,9 @@ const PersonalInfoTwo = () => {
   const [age, setAge] = useState([27, 45]);
   const navigate = useNavigate();
   const { userData, updateUser } = useUser();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get('userId');
 
   const handleSave = () => {
     // User input Validatin to be done.
@@ -33,7 +37,8 @@ const PersonalInfoTwo = () => {
     updateUser(userData);
 
     console.log(userData);
-    navigate("/info-3" , { selectedInterests: userData.interests });
+    // navigate("/info-3" , { selectedInterests: userData.interests });
+    navigate(`/info-3?userId=${userId}`, { selectedInterests: userData.interests });
   };
   
   const handleAgeChange = (value) => {

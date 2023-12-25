@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 import dobToAge from "dob-to-age";
 import axios from "axios";
+import { useLocation } from 'react-router-dom';
 
 
 import DatePicker from "react-datepicker";
@@ -13,6 +14,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import CalenderIcon from "../assets/icons/calenderIcon.svg";
 
 const PersonalInfoOne = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get('userId');
+
   const [name, setName] = useState("");
 
   const [selectedGender, setSelectedGender] = useState("");
@@ -74,14 +79,15 @@ const PersonalInfoOne = () => {
     updateUser(userData);
     try {
       const response = await axios.post(
-        "https://prototypeserver.onrender.com/api/save-user-info",
-        userData,
+        "https://weak-teal-donkey-ring.cyclic.app/api/save-user-info",
+        userData,userId,
         { withCredentials: true }
       );
   
       console.log(userData);
   
-      navigate("/info-2");
+      navigate(`/info-2?userId=${userId}`);
+
     } catch (error) {
       console.log(error);
     }

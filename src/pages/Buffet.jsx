@@ -14,7 +14,7 @@ const Buffet = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://prototypeserver.onrender.com/api/users");
+        const response = await fetch("https://weak-teal-donkey-ring.cyclic.app/api/users");
         const data = await response.json();
         if (data.success) {
           setUsers(data.users);

@@ -46,7 +46,7 @@ app.use(session({
     sessions: 'sessions', // Specify the node where sessions will be stored
   }),
   cookie: {
-    secure: true, // Set to true in a production environment with HTTPS
+    secure: false, // Set to true in a production environment with HTTPS
     maxAge: 24 * 60 * 60 * 1000, // Session expires after 24 hours
     sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Adjust based on environment
   },
@@ -159,7 +159,7 @@ app.post('/api/validate-otp', async (req, res) => {
     // Validate OTP
     if (enteredOtp == user.otp) {
       await userRef.update({ otp: null });
-      return res.json({ success: true, message: 'OTP is valid' });
+      return res.json({ success: true, message: 'OTP is valid',userId: user.userId });
     } else {
       return res.json({ success: false, error: 'Invalid OTP' });
     }

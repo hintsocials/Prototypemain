@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import BottomNav from "../components/BottomNav";
 import ChatButton from "../assets/icons/Hint.svg";
-// import CardList from "../assets/icons/CardList.svg";
+import CardList from "../assets/icons/CardList.svg";
 import Verify from "../assets/icons/Verify.svg";
 import Like from "../assets/icons/Like.svg";
 import { useUser } from "../context/UserContext";
@@ -21,7 +21,7 @@ const HintPremium = () => {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await fetch('https://prototypeserver.onrender.com/api/users');
+      const response = await fetch('https://weak-teal-donkey-ring.cyclic.app/api/users');
       const data = await response.json();
       console.log(data);
 
