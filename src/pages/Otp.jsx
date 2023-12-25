@@ -43,7 +43,7 @@ const Otp = () => {
       try {
         console.log('Entered OTP:', otpValue); // Add this line
         console.log('User ID from query parameter:', userId);
-        const response = await axios.post("https://weak-teal-donkey-ring.cyclic.app/api/validate-otp", 
+        const response = await axios.post("http://weak-teal-donkey-ring.cyclic.app/api/validate-otp", 
           //userId: '-Nm9f38jfNe1yVaU6t15', // Replace with the actual user ID from your application state or context
           { enteredOtp: otpValue, userId },
           { withCredentials: true }
