@@ -24,6 +24,7 @@ const PersonalInfoFour = () => {
       ...userData,
       qualification,
       bio,
+      userId,
     };
 
     // Update the local user data in the context
@@ -33,7 +34,7 @@ const PersonalInfoFour = () => {
       // Make a POST request to save user information to the backend
       const response = await axios.post(
         "https://weak-teal-donkey-ring.cyclic.app/api/save-user-infonew",
-        newUserData,userId,
+        newUserData,
         { withCredentials: true } // Include this if you need to send credentials
       );
 
