@@ -74,15 +74,16 @@ const PersonalInfoOne = () => {
       dobsplit,
       gender: selectedGender,
       age,
+      userId,
     };
 
     updateUser(userData);
     try {
-      // const response = await axios.post(
-      //   "https://weak-teal-donkey-ring.cyclic.app/api/save-user-info",
-      //   userData,userId,
-      //   { withCredentials: true }
-      // );
+      const response = await axios.post(
+        "https://weak-teal-donkey-ring.cyclic.app/api/save-user-info",
+        userData,
+        { withCredentials: true }
+      );
   
       console.log(userData);
   

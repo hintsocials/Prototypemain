@@ -119,12 +119,12 @@ const Otp = () => {
               Enter
             </button>
           </div>
-          <p className=" text-zinc-300 text-base font-normal font-['Lufga'] ">
+          {/* <p className=" text-zinc-300 text-base font-normal font-['Lufga'] ">
             I did not receive the code.{" "}
             <span className=" text-violet-500 text-base font-bold font-['Lufga']">
               Resend the OTP.
             </span>
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
