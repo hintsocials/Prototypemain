@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import BottomNav from "../components/BottomNav";
 import ChatButton from "../assets/icons/Hint.svg";
-import { ReactComponent as CardList } from "../assets/icons/CardList.svg";
+// import { ReactComponent as CardList } from "../assets/icons/CardList.svg";
 // import CardList from "../assets/icons/CardList.svg";
 
 import Verify from "../assets/icons/Verify.svg";
@@ -56,11 +56,11 @@ const HintPremium = () => {
 
   return (
     <div className="bg-black w-full overflow-hidden h-screen fixed">
-      <div className="m-6 fixed p-3 h-fit py-[13px] bg-[#634880] bg-opacity-60 rounded-full justify-center items-center bg inset-y-0 z-20">
+      {/* <div className="m-6 fixed p-3 h-fit py-[13px] bg-[#634880] bg-opacity-60 rounded-full justify-center items-center bg inset-y-0 z-20">
         <Link to="/card-list">
           <img src={CardList} alt="Love button for card list" className="translate-y-[2px]" />
         </Link>
-      </div>
+      </div> */}
       
       <Swiper
         className="h-full w-full"

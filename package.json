@@ -49,8 +49,7 @@
     "react-webcam": "^7.2.0",
     "styled-components": "^6.1.1",
     "swiper": "^11.0.5",
-    "unirest": "^0.6.0",
-    "vite-plugin-svg": "^0.7.0"
+    "unirest": "^0.6.0"
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.7",
