@@ -43,7 +43,7 @@ function App() {
           <Route path="/hint" element={<Hint />} />
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/buffet" element={<Buffet/>}/>
-          <Route path="/maps" element={<Maps/>}/>
+          {/* <Route path="/maps" element={<Maps/>}/> */}
           <Route path="/premium" element={<Premium/>}/>
           <Route path="/settings" element={<Settings/>}/>
           <Route path="/retake" element={<RetakeProfileImage/>}/>

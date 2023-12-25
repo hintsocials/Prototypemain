@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import BottomNav from "../components/BottomNav";
 import ChatButton from "../assets/icons/Hint.svg";
-import CardList from "../assets/icons/CardList.svg";
+import { ReactComponent as CardList } from "../assets/icons/CardList.svg";
+// import CardList from "../assets/icons/CardList.svg";
+
 import Verify from "../assets/icons/Verify.svg";
 import Like from "../assets/icons/Like.svg";
 import { useUser } from "../context/UserContext";
