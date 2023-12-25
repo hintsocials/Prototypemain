@@ -23,7 +23,7 @@ const HintPremium = () => {
 
   const fetchUserProfiles = async () => {
     try {
-      const response = await fetch('http://weak-teal-donkey-ring.cyclic.app/api/users');
+      const response = await fetch('https://weak-teal-donkey-ring.cyclic.app/api/users');
       const data = await response.json();
       console.log(data);
 

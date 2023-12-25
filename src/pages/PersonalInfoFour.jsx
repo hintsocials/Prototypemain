@@ -32,7 +32,7 @@ const PersonalInfoFour = () => {
     try {
       // Make a POST request to save user information to the backend
       const response = await axios.post(
-        "http://weak-teal-donkey-ring.cyclic.app/api/save-user-infonew",
+        "https://weak-teal-donkey-ring.cyclic.app/api/save-user-infonew",
         newUserData,userId,
         { withCredentials: true } // Include this if you need to send credentials
       );
