@@ -11,7 +11,7 @@ import HintPremium from "./pages/HintPremium"
 import Hint from "./pages/Hint";
 import Profile from "./pages/Profile"
 import Buffet from "./pages/Buffet";
-import Maps from "./pages/Maps";
+// import Maps from "./pages/Maps";
 import Premium from "./pages/Premium";
 import Settings from "./pages/Settings";
 import RetakeProfileImage from "./pages/RetakeProfileImage";
