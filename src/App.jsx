@@ -11,7 +11,7 @@ import HintPremium from "./pages/HintPremium"
 import Hint from "./pages/Hint";
 import Profile from "./pages/Profile"
 import Buffet from "./pages/Buffet";
-// import Maps from "./pages/Maps";
+import Maps from "./pages/Maps";
 import Premium from "./pages/Premium";
 import Settings from "./pages/Settings";
 import RetakeProfileImage from "./pages/RetakeProfileImage";
@@ -43,7 +43,7 @@ function App() {
           <Route path="/hint" element={<Hint />} />
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/buffet" element={<Buffet/>}/>
-          {/* <Route path="/maps" element={<Maps/>}/> */}
+          <Route path="/maps" element={<Maps/>}/>
           <Route path="/premium" element={<Premium/>}/>
           <Route path="/settings" element={<Settings/>}/>
           <Route path="/retake" element={<RetakeProfileImage/>}/>
