@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 // import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css';
 import hotelImg from "../assets/images/hotelImg.png";
 import Bombai from "../assets/images/Bombai.png";
 import cafe16 from "../assets/images/cafe16.png";
